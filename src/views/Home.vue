@@ -600,20 +600,20 @@ export default {
   animation: dot-enter 1s ease forwards 3s;
 }
 
-.dot2 {
+.dot4 {
   top: 49vh;
   left: 72vh;
   animation: dot-enter 1s ease forwards 3.2s;
 }
 
 .dot3 {
-  top: 26vh;
-  left: 78vw;
+  top: 12vh;
+  left: 56vw;
   animation: dot-enter 1s ease forwards 3.4s;
 }
 
-.dot4 {
-  top: 76vh;
+.dot2 {
+  top: 73vh;
   left: 68.5vw;
   transition: 300ms;
   animation: dot-enter 1s ease forwards 3.6s;
