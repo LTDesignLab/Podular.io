@@ -125,7 +125,7 @@ export default {
   },
   computed: {
     isMobile() {
-      return ( window.innerWidth < 768 ? true : false );
+      return ( window.innerWidth < 900 ? true : false );
     }
   },
   methods: {
@@ -470,8 +470,11 @@ export default {
               </div>
             </div>
             <div class="video-container" :class="enterOn(4, 'custom-video')">
-              <video muted class="custom-video" id="second-custom">
+              <video v-if="!isMobile" muted class="custom-video" id="second-custom">
                 <source src="../assets/videos/custom.mp4" type="video/mp4">
+              </video>
+              <video v-if="isMobile" muted class="custom-video mobile-custom" id="second-custom">
+                <source src="../assets/videos/custom2.mp4" type="video/mp4">
               </video>
             </div>
           </div>        
@@ -512,6 +515,10 @@ export default {
 
 <style lang="scss" scoped>
 @import '../assets/styles/global';
+
+.mobile-custom {
+  transform: scale(1.1) !important;
+}
 
 .contact-container {
   display: flex;
@@ -645,6 +652,7 @@ export default {
  border-radius: 100%;
  opacity: 0;
  transition: 300ms;
+ z-index: 999999;
  cursor: default !important;
  //animation: flux 2s ease forwards infinite;
 
@@ -1479,6 +1487,31 @@ $buttonHeight: 50px;
 }
 
 @media only screen and (max-width: 900px) {
+  .dot1 {
+    left: 14vw !important;
+    top: 14vh !important;
+  }
 
+  .dot2 {
+    top: 45vh !important;
+    left: 80vw !important;
+  }
+
+  .dot3 {
+    left: 38vw !important;
+    top: 16vh !important;
+  }
+
+  .dot4 {
+    left: 22vw;
+  }
+
+  .hover-box {
+    //transition: 0s !important;
+    //transform: scale(0.5) !important;
+    width: 80px !important;
+    margin-left: -50px !important;
+    font-size: 12px !important;
+  }
 }
 </style>
